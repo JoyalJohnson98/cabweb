@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <h2 style="text-align: center; color:red;">SIGN UP/ REGISTRATION</h2>
+        </head>
+
+    <body>
+        <a href="HOME PAGE.html">HOME</a>
+        <style>
+            body  {
+  background-image: url("../CabImages/4548.webp");
+  /* background-color: #cccccc; */
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+        </style>
+<center>
+    
+        <form action="" id="loginform">
+        
+       <table>
+           <tr>
+               <td>
+                   <label for="title" style="color: red;">Title</label>
+               </td>
+           <td><select id="title" name="title">
+               <option value="1">Mr.</option>
+               <option value="2">Mrs.</option>
+               <option value="3" selected>Ms.</option>
+           </select></td>
+       </tr>
+           <tr>
+       <td>
+           <label for="firstName" style="color: red;">First Name:</label>
+       </td>
+       <td>
+           <input type="text" id="firstName" name="FirstName" placeholder="Your First Name" /></td><br/>
+       </tr>
+       <tr>
+           <td>
+               <label for="lastName" style="color: red;">Last Name:</label>
+           </td>
+       <td><input type="text" id="lastName" name="LastName" placeholder="Your Last Name" /> </td><br/>
+       </tr>
+       <tr>
+           <td>
+               <label for="gender"style="color: red;">Gender:</label>
+           </td>
+           <td>
+               <input type="radio" id="male" name="Gender" value="1" style="color: white;">Male
+               <input type="radio" id="female" name="Gender" value="2"style="color: white;">Female
+           </td>
+   
+       </tr>
+       <tr>
+           <td>
+               <label for="mobileNumber"style="color: red;">Mobile Number:</label>
+           </td>
+       <td><input type="text" id="mobileNumber" name="mobileNumber" placeholder="enter mobile number" /> </td><br/>
+       </tr>
+       <tr>
+           <td>
+               <label for="email" style="color: red;">Email:</label>
+           </td>
+       <td><input type="text" id="email" name="email" placeholder="Enter email id" /> </td><br/>
+       </tr>
+       <tr>
+        <td>
+            <label for="password"style="color: red;">Password:</label>
+        </td>
+    <td><input type="text" id="password" name="password" placeholder="enter your password" /> </td><br/>
+    </tr>
+    <tr>
+        <td>
+            <label for="confirmpassword"style="color: red;">Confirm Password:</label>
+        </td>
+    <td><input type="text" id="confirmpassword" name="confirmpassword" placeholder="enter your password" /> </td><br/>
+    </tr>
+       <tr>
+           <td>
+               <label for="canwecontactyou?"style="color: red;">Can we contact you?</label>
+           </td>
+           <td>
+               <input type="radio" id="yes" name="canwecontactyou?" value="1"style="color: white;">Yes
+           
+       
+               <input type="radio" id="no" name="canwecontactyou?" value="2"style="color: white;">No
+           </td>
+   
+       </tr>
+       <tr>
+           <td>
+               <label for="communicationPreference"style="color:red;">Communication Preference:</label>
+           </td>
+           <td>
+               <input type="checkbox" id="communicationPreference" name="communicationPreference"style="color: white;">Email
+               <input type="checkbox" id="communicationPreference" name="communicationPreference"style="color: white;">SMS
+           </td>
+           <tr>
+           
+   
+       </tr>
+           
+       <tr> <td>
+           <label for="communicationPreference"></label>
+       </td>
+           <td>
+               <input type="submit" onclick="javascript:saveData();" id="button" name="submit" value="submit" style="color:black; background-color:red;" />
+               <input type="reset" id="button" name="Reset" value="Reset"  style="color:black; background-color:red;" /></td>
+               
+               
+           </td>
+       </tr>
+    </table>
+    </form>
+
+</form>
+    <script>
+        var email = document.forms['loginform']['email'];
+        var password = document.forms['loginform']['password'];
+        var confirmpassword = document.forms['loginform']['confirmpassword'];
+        
+
+        var btn = document.getElementById('button');
+
+        function validate(e){
+            e.preventDefault();
+            
+        }
+
+        document.querySelectorAll('#loginform input').forEach(e=>{
+            e.addEventListener('keyup', function(event){
+                if(!email.validity.valid || !password.validity.valid || !confirmpassword.validity.valid   ){
+                    btn.setAttribute('disabled', true);
+                }
+                else{
+                    btn.removeAttribute('disabled');
+                }
+                if(password.value != confirmpassword.value){
+                    btn.setAttribute('disabled', true);
+
+                }
+                else{
+                    btn.removeAttribute('disabled');
+
+                }
+                
+            })
+        });
+        
+    </script>
+   </center>
+   </body>
+   </html>
